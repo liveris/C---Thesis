@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6C61B5E6-1F6F-47B1-96A2-D82FFA145BAE}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>example</RootNamespace>
+    <ProjectName>faceRec</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\..\bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\..\bin\</OutDir>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)/../include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)/../lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>crowdsight.lib;opencv_core242.lib;opencv_highgui242.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)/../include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(ProjectDir)/../lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>crowdsight.lib;opencv_core242.lib;opencv_highgui242.lib;opencv_imgproc242.lib;opencv_calib3d242.lib;opencv_contrib242.lib;opencv_nonfree242.lib;opencv_features2d242.lib;opencv_flann242.lib;opencv_gpu242.lib;opencv_legacy242.lib;opencv_ml242.lib;opencv_objdetect242.lib;opencv_photo242.lib;opencv_video242.lib;opencv_videostab242.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="anotherGabor.cpp" />
+    <ClCompile Include="demo.cpp" />
+    <ClCompile Include="colordetector.cpp" />
+    <ClCompile Include="demoMissclassifiedCropped.cpp" />
+    <ClCompile Include="demoYaleB.cpp" />
+    <ClCompile Include="extractGaborFeatureVectorMain.cpp" />
+    <ClCompile Include="facePreprocessor.cpp" />
+    <ClCompile Include="facialRegionExtractor.cpp" />
+    <ClCompile Include="gaborFeatureExtractor.cpp" />
+    <ClCompile Include="gaborFilterMain.cpp" />
+    <ClCompile Include="hogFeatureExtractor.cpp" />
+    <ClCompile Include="imageUtils.cpp" />
+    <ClCompile Include="lbpFeatureExtractor.cpp" />
+    <ClCompile Include="lbpUniform.cpp" />
+    <ClCompile Include="ltpFeatureExtractor.cpp" />
+    <ClCompile Include="src\example.cpp" />
+    <ClCompile Include="sslMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="colordetector.h" />
+    <ClInclude Include="cverror.h" />
+    <ClInclude Include="facePreprocessor.h" />
+    <ClInclude Include="facialRegionExtractor.h" />
+    <ClInclude Include="fssFeatureExtractor.h" />
+    <ClInclude Include="gaborFeatureExtractor.h" />
+    <ClInclude Include="hogFeatureExtractor.h" />
+    <ClInclude Include="imageUtils.h" />
+    <ClInclude Include="lbpFeatureExtractor.h" />
+    <ClInclude Include="lbpUniform.h" />
+    <ClInclude Include="ltpFeatureExtractor.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
